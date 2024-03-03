@@ -1,0 +1,40 @@
+{
+  "mappings": {
+    "properties": {
+      "video": {
+        "type": "text"
+      },
+      "bucket": {
+        "type": "text"
+      },
+      "s3key": {
+        "type": "text"  
+      },
+      "timestamp": {
+        "type": "text"
+      },
+      "multimodal_vector": {
+        "type": "knn_vector",
+        "dimension": 1024,
+        "method": {
+          "engine": "nmslib",
+          "space_type": "cosinesimil", 
+          "name": "hnsw",
+          "parameters": {
+            "ef_construction": 512,
+            "m": 16
+          }
+        }
+      }
+    }
+  },
+  "settings": {
+    "index": {
+      "number_of_shards": 2,
+      "knn.algo_param": {
+        "ef_search": 512
+      },
+      "knn": true
+    }
+  }
+}
