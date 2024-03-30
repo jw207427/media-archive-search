@@ -1,0 +1,79 @@
+{
+  "mappings": {
+    "properties": {
+      "id": {
+        "type": "integer"
+      },
+      "key": {
+        "type": "text"
+      },
+      "bucket": {
+        "type": "text"
+      },
+      "title": {
+        "type": "text"
+      },
+      "text": {
+        "type": "text"
+      },
+      "genres": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        }
+      },
+      "spoken_languages": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        }
+      },
+      "release_date": {
+        "type": "date"
+      },
+      "rating": {
+        "type": "float"
+      },
+      "cast": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        }
+      },
+      "overview": {
+        "type": "text"
+      },
+      "budget": {
+        "type": "integer"
+      },
+      "embedding_vector": {
+        "type": "knn_vector",
+        "dimension": 1536,
+        "method": {
+          "engine": "nmslib",
+          "space_type": "cosinesimil", 
+          "name": "hnsw",
+          "parameters": {
+            "ef_construction": 512,
+            "m": 16
+          }
+        }
+      }
+    }
+  },
+  "settings": {
+    "index": {
+      "number_of_shards": 2,
+      "knn.algo_param": {
+        "ef_search": 512
+      },
+      "knn": true
+    }
+  }
+}

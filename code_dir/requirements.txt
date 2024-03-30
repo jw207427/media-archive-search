@@ -1,0 +1,4 @@
+opencv-python-headless
+opensearch-py
+ipywidgets
+boto3==1.34.62

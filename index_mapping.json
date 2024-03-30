@@ -7,10 +7,19 @@
       "bucket": {
         "type": "text"
       },
-      "s3key": {
+      "video_key": {
+        "type": "text"  
+      },
+      "frame_key": {
         "type": "text"  
       },
       "timestamp": {
+        "type": "text"
+      },
+      "caption": {
+        "type": "text"
+      },
+      "embedding_type": {
         "type": "text"
       },
       "multimodal_vector": {
