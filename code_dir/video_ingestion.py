@@ -13,11 +13,12 @@ if __name__ == "__main__":
     parser.add_argument("--index_name", type=str, default="mm-search-2024-03-13-19--index")
     parser.add_argument("--prefix", type=str, default="multi-modal-search")
     parser.add_argument("--bucket", type=str, default="sagemaker-us-west-2")
-    parser.add_argument("--region", type=str, default="us-west-2")
+    parser.add_argument("--region", type=str, default="us-east-1")
     args, _ = parser.parse_known_args()
 
     # set env region
     os.environ['AWS_DEFAULT_REGION'] = args.region
+    print(f"AWS region: {args.region}")
 
     # import funtions
     from helper import extract_key_frames, upload_frames, get_embedding, opensearch_query
